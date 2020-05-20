@@ -1,3 +1,9 @@
-FROM tomcat:8
-# Take the war and copy to webapps of tomcat
-COPY target/*.war /usr/local/tomcat/webapps/myweb.war
+FROM node:10.9.0
+
+COPY . .
+
+RUN npm install
+
+EXPOSE 8000
+
+CMD npm start
